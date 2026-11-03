@@ -4,7 +4,7 @@ Use the Heltec WiFi LoRa 32 V4 with a 2-wire PT100 through MAX31865.
 
 1. Remove the old `HeltecPT100Kit` folder from Arduino's `libraries` folder; install `HeltecPT100Kit_Library.zip` through Sketch > Include Library > Add .ZIP Library.
 2. Open `Uprooted_Sensor_Station/Uprooted_Sensor_Station.ino`; keep `website.h` **in the same sketch folder**.
-3. Follow the included three-page student guide (`Uprooted_FLL_Build_Guide.pdf`) to fill the TODOs, create the HTML page, and test the complete system.
+3. Follow the included five-page student guide (`Uprooted_FLL_Build_Guide.pdf`) to fill the TODOs, create the HTML page, and test the complete system.
 4. Select the appropriate Heltec V4 board, attach the LoRa antenna, compile, upload, open Serial Monitor at 115200.
 5. Join Wi-Fi `PT100-UPROOTED-XXXX` (last digits are unique per board) and open the captive portal or `http://192.168.4.1`.
 
@@ -18,7 +18,7 @@ This package preserves the previous LoRa radio cooldown and relay service. Do no
 
 Validation: Static source checks and HTML syntax only. Hardware build and test with Heltec's Arduino package still needed.
 
-**Guide included:** Three-page printable PDF and matching editable DOCX. Page 3 covers building the student website using `website.h`.
+**Guide included:** Five-page printable PDF and matching editable DOCX. Page 1 covers Arduino C++ basics; page 2 is a vocabulary reference; page 5 covers building the student website using `website.h`.
 
 
 ## When the MAX31865 cannot initialize
@@ -36,3 +36,7 @@ Exit node here means a LoRa-to-local-Wi-Fi sensor dashboard and packet relay;
 `/api/status`, and `station.exitNodeMode()` is available for optional student
 logic. Reconnecting a working MAX31865 automatically restores the sensor
 station view after SPI retries (when readTemp() continues running).
+
+## Vocabulary sheet
+
+The five-page guide includes a one-page glossary of LoRa, ESP32-S3, PT100, MAX31865, SPI, nodes, relays, Wi-Fi APs, exit nodes, and mesh networks. A matching `VOCABULARY.md` is provided for quick reference. The project uses raw LoRa with a limited relay, **not a self-routing mesh or LoRaWAN**.
